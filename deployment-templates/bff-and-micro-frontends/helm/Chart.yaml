@@ -1,0 +1,5 @@
+apiVersion: v2
+name: bff-and-micro-frontends
+version: 0.1.0
+appVersion: "0.1.0"
+description: BFF layer with web/mobile frontends and shared APIs

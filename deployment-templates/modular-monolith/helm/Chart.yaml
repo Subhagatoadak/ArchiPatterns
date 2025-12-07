@@ -1,0 +1,5 @@
+apiVersion: v2
+name: modular-monolith
+description: Modular monolith FastAPI chart
+version: 0.1.0
+appVersion: "0.1.0"

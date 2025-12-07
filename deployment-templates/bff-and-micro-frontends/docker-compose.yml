@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  web-bff:
+    build: ./bff/web-bff
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8100:8000"
+    env_file:
+      - ./bff/web-bff/.env.example
+  mobile-bff:
+    build: ./bff/mobile-bff
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8101:8000"
+    env_file:
+      - ./bff/mobile-bff/.env.example
+  shared-apis:
+    build: ./services/shared-apis
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8102:8000"
+    env_file:
+      - ./services/shared-apis/.env.example
+  web-frontend:
+    build: ./frontends/web
+    command: uvicorn src.main:app --host 0.0.0.0 --port 3000 --reload
+    ports:
+      - "3000:3000"
+  mobile-frontend:
+    build: ./frontends/mobile
+    command: uvicorn src.main:app --host 0.0.0.0 --port 3001 --reload
+    ports:
+      - "3001:3001"

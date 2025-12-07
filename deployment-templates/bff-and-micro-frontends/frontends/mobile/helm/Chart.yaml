@@ -1,0 +1,5 @@
+apiVersion: v2
+name: mobile-frontend
+description: Mobile frontend shell chart
+version: 0.1.0
+appVersion: "0.1.0"

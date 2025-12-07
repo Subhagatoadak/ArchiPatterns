@@ -1,0 +1,5 @@
+apiVersion: v2
+name: service-based-stack
+version: 0.1.0
+appVersion: "0.1.0"
+description: FastAPI service-based stack (mini-services)

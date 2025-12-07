@@ -1,0 +1,11 @@
+image:
+  repository: your-registry/event-sourcing
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 8000
+env:
+  - name: APP_ENV
+    value: prod
+resources: {}

@@ -1,0 +1,13 @@
+services:
+  - name: web-api
+    image: your-registry/web-api:latest
+    port: 8000
+  - name: payments
+    image: your-registry/payments:latest
+    port: 8000
+  - name: reporting
+    image: your-registry/reporting:latest
+    port: 8000
+service:
+  type: ClusterIP
+resources: {}

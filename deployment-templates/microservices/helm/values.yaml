@@ -1,0 +1,19 @@
+services:
+  - name: api-gateway
+    image: your-registry/api-gateway:latest
+    port: 8000
+  - name: user-service
+    image: your-registry/user-service:latest
+    port: 8000
+  - name: order-service
+    image: your-registry/order-service:latest
+    port: 8000
+  - name: payment-service
+    image: your-registry/payment-service:latest
+    port: 8000
+  - name: reporting-service
+    image: your-registry/reporting-service:latest
+    port: 8000
+service:
+  type: ClusterIP
+resources: {}

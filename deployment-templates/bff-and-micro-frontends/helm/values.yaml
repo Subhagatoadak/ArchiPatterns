@@ -1,0 +1,19 @@
+services:
+  - name: web-bff
+    image: your-registry/web-bff:latest
+    port: 8000
+  - name: mobile-bff
+    image: your-registry/mobile-bff:latest
+    port: 8000
+  - name: shared-apis
+    image: your-registry/shared-apis:latest
+    port: 8000
+  - name: web-frontend
+    image: your-registry/web-frontend:latest
+    port: 3000
+  - name: mobile-frontend
+    image: your-registry/mobile-frontend:latest
+    port: 3001
+service:
+  type: ClusterIP
+resources: {}

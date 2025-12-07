@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  web-api:
+    build: ./services/web-api
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./services/web-api/.env.example
+  payments:
+    build: ./services/payments
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8001:8000"
+    env_file:
+      - ./services/payments/.env.example
+    depends_on:
+      - web-api
+  reporting:
+    build: ./services/reporting
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8002:8000"
+    env_file:
+      - ./services/reporting/.env.example
+    depends_on:
+      - web-api

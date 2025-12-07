@@ -1,0 +1,5 @@
+apiVersion: v2
+name: web-bff
+description: Web BFF FastAPI chart
+version: 0.1.0
+appVersion: "0.1.0"

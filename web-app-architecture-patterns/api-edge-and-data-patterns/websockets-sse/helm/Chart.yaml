@@ -1,0 +1,5 @@
+apiVersion: v2
+name: websockets-sse
+version: 0.1.0
+appVersion: "0.1.0"
+description: websockets-sse pattern FastAPI skeleton

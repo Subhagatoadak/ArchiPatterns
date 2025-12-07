@@ -1,0 +1,5 @@
+apiVersion: v2
+name: cqrs
+version: 0.1.0
+appVersion: "0.1.0"
+description: cqrs pattern FastAPI skeleton

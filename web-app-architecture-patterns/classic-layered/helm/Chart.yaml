@@ -1,0 +1,5 @@
+apiVersion: v2
+name: classic-layered
+version: 0.1.0
+appVersion: "0.1.0"
+description: Classic layered FastAPI service chart

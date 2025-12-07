@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  api-gateway:
+    build: ./services/api-gateway
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8080:8000"
+    env_file:
+      - ./services/api-gateway/.env.example
+  user-service:
+    build: ./services/user-service
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8001:8000"
+    env_file:
+      - ./services/user-service/.env.example
+    depends_on:
+      - api-gateway
+  order-service:
+    build: ./services/order-service
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8002:8000"
+    env_file:
+      - ./services/order-service/.env.example
+    depends_on:
+      - api-gateway
+  payment-service:
+    build: ./services/payment-service
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8003:8000"
+    env_file:
+      - ./services/payment-service/.env.example
+    depends_on:
+      - api-gateway
+  reporting-service:
+    build: ./services/reporting-service
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8004:8000"
+    env_file:
+      - ./services/reporting-service/.env.example
+    depends_on:
+      - api-gateway

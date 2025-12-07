@@ -1,0 +1,11 @@
+image:
+  repository: your-registry/classic-layered
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 8000
+resources: {}
+env:
+  - name: APP_ENV
+    value: prod
